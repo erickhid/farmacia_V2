@@ -1,0 +1,311 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Unidad de Farmacia - ASI</title>
+    <link href="CSS/med.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link href="CSS/dropdown.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="CSS/Avanzado.css" rel="stylesheet" media="all" type="text/css" />
+	<script type="text/javascript" src="Scripts/sweetalert.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/shim.js"></script>
+
+    <script type="text/javascript">
+
+        function ResetTimeOut() {
+            debugger;
+            var requestParms = new Sys.Net.WebRequest();
+            requestParms.set_url("KeepSessionAlive.aspx");
+            requestParms.set_httpVerb("POST");
+            var message = "hi";
+            requestParms.set_body(message);
+            requestParms.add_completed(DoNothing);
+            requestParms.invoke();
+        }
+
+        function DoNothing(executor, eventArgs) {
+
+        }
+        window.setInterval("ResetTimeOut();", 1800000);
+
+    </script>
+
+     <asp:ContentPlaceHolder ID="head_contentholder" runat="server">
+     </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <center>
+            <div style="width:792px; border:solid 5px #e8e4db;display:block; position:relative; left:auto; right:auto; background-color:#e8e4db;">
+                <div style="padding:0px; width:780px; height:24px; background-color:#aba392; text-align:left;">
+                    <table id="cabecera" border="0" cellpadding="0" cellspacing="0" style="width:780px;">
+                        <tr>
+                            <td style="padding:0px;">
+                                <div id="menutop">
+                                    <ul class="dropdown">
+                                        <li><a href="#" class="dir" id="GIngreso" runat="server">INGRESO&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_ingresoARV" runat="server" NavigateUrl="~/ingresoARV.aspx">ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_ingresoPROF" runat="server" NavigateUrl="~/ingresoProf.aspx">PROFILAXIS</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_ingresoCONDONES" runat="server" NavigateUrl="~/Condones.aspx">CONDONES</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="h1_AsigacionHorariosCitas" runat="server" NavigateUrl="~/AsignacionHorariosCitas.aspx">HORARIO CITAS</asp:HyperLink></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="dir" id="GPacientes" runat="server">PACIENTES&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_pacientesActivos" runat="server" NavigateUrl="~/Pacientes.aspx?E=A">ACTIVOS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_pacientesPostParto" runat="server" NavigateUrl="~/Pacientes.aspx?E=P">POSTPARTO</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_pacientesAbandonos" runat="server" NavigateUrl="~/Pacientes.aspx?E=B">ABANDONOS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_pacientesTraslados" runat="server" NavigateUrl="~/Pacientes.aspx?E=T">TRASLADOS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_pacientesFallecidos" runat="server" NavigateUrl="~/Pacientes.aspx?E=F">FALLECIDOS</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;"
+                                                        noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <div style="padding-left:12px; padding-bottom:4px;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" style="width:135px;">
+                                                            <tr>
+                                                                <td style="color: #ffffff;">No. ASI:&nbsp;</td>
+                                                                <td>
+                                                                    <asp:TextBox ID="txt_asi" runat="server" CssClass="NHC2" MaxLength="7" Width="64px"
+                                                                        TabIndex="1" AutoPostBack="False"></asp:TextBox>
+                                                                    <cc1:FilteredTextBoxExtender ID="txt_asi_FilteredTextBoxExtender" runat="server"
+                                                                        TargetControlID="txt_asi" ValidChars="0123456789Pp">
+                                                                    </cc1:FilteredTextBoxExtender>
+                                                                </td>
+                                                                <td style="padding-left:2px;">
+                                                                    <asp:ImageButton ID="btn_buscar" runat="server" ToolTip="BUSCAR" CausesValidation="false" ImageUrl="~/images/search.png" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="#" class="dir" id="GReportes" runat="server">REPORTES&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_SIGPRO" runat="server" NavigateUrl="RSigpro.aspx">REP. ARV SIGPRO</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPACTIVOS" runat="server" NavigateUrl="RPActivosMes.aspx">PACIENTES ACTIVOS</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RCAMBIOEDAD" runat="server" NavigateUrl="RCambioEdad.aspx">REP. CAMBIO EDAD</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_REPORTES" runat="server" NavigateUrl="Reportes.aspx">REP. ESTADO PACIENTES</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RCONSUMO" runat="server" NavigateUrl="RConsumo.aspx">REP. CONSUMOS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RENFERMEDAD" runat="server" NavigateUrl="REnfermedad.aspx">REP. ENFERMEDADES</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_R90DIAS" runat="server" NavigateUrl="R90dias.aspx">REP. MENSUAL 90 DIAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_R90DIAS2" runat="server" NavigateUrl="R90dias2.aspx">REP. DIARIO 90 DIAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RVISITAS" runat="server" NavigateUrl="RVisitas.aspx">REP. VISITA PACIENTES</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPXACTIVOSTMP" runat="server" NavigateUrl="RPxTMP.aspx">REP. TRIMETROPIN</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPXCONSUMO" runat="server" NavigateUrl="RPxConsumo.aspx">PACIENTES X CONSUMO</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPPROYECCION" runat="server" NavigateUrl="RPProyeccion.aspx">REP. PROYECCION ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RINDICADORTMP" runat="server" NavigateUrl="RIndicadorTMP.aspx">REP. INDICADOR TRIMETROPIN</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RNOARV" runat="server" NavigateUrl="RNoARV.aspx">REP. SIN ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RepNOARV" runat="server" NavigateUrl="RepNoARV.aspx">REP. PACIENTES SIN ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RCONSULTAS" runat="server" NavigateUrl="RConsultas.aspx">REP. CONSULTAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPXCONSULTAS" runat="server" NavigateUrl="RPxConsultas.aspx">PACIENTES CONSULTAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RPIOS_ITS" runat="server" NavigateUrl="IOS_ITS.aspx">REP. IOS/ITS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RCONDONES" runat="server" NavigateUrl="RCondones.aspx">REP. CONDONES</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_Rep_Ingreso_medicamento" runat="server" NavigateUrl="Rep_Ingreso_medicamento.aspx">REP. INGRESOS INVENTARIO</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_Rep_Egreso_medicamento" runat="server" NavigateUrl="Rep_Egreso_medicamento.aspx">REP. OTROS EGRESOS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RepConsumoTotal" runat="server" NavigateUrl="RepConsumoTotal.aspx">REP. CONSUMO + EGRESOS </asp:HyperLink></li>
+												<li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_RepFarmacia" runat="server" NavigateUrl="RepFar.aspx">REP. FARMACIA</asp:HyperLink></li>
+                                                
+											</ul>
+                                        </li>
+                                        <li><a href="#" class="dir" id="GAdministracion" runat="server">ADMINISTRACION&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_NRPediatrico" runat="server" NavigateUrl="NBPediatrico.aspx">NUEVO REGISTRO PEDIATRICO</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_Esquema" runat="server" NavigateUrl="Esquemas.aspx">ESQUEMAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_FARV" runat="server" NavigateUrl="farv.aspx">FF ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_FPROF" runat="server" NavigateUrl="fprof.aspx">FF PROFILAXIS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_LARV" runat="server" NavigateUrl="larv.aspx">CODIGOS ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_LPROF" runat="server" NavigateUrl="lprof.aspx">CODIGOS PROFILAXIS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_FF" runat="server" NavigateUrl="ff.aspx">CODIGOS FF</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_Estatus" runat="server" NavigateUrl="codestatus.aspx">CODIGOS ESTATUS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_Frecuencia" runat="server" NavigateUrl="codfx.aspx">CODIGOS FRECUENCIA</asp:HyperLink></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="dir" id="GCodigos" runat="server">CODIGOS&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_estatus" runat="server" NavigateUrl="~/codigos.aspx?E=1">ESTATUS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_formafarmaceutica" runat="server" NavigateUrl="~/codigos.aspx?E=2">FORMA FARMACEUTICA</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_arv" runat="server" NavigateUrl="~/codigos.aspx?E=3">ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_ffarv" runat="server" NavigateUrl="~/codigos.aspx?E=4">FF ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_esquema" runat="server" NavigateUrl="~/codigos.aspx?E=5">ESQUEMAS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_subesquema" runat="server" NavigateUrl="~/codigos.aspx?E=6">SUBESQUEMAS</asp:HyperLink></li>
+                                                <li>
+                                                    <hr style="color: #FFFFFF; background-color: #FFFFFF; height: 1px;" noshade="noshade" size="1" />
+                                                </li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_prof" runat="server" NavigateUrl="~/codigos.aspx?E=7">PROFILAXIS</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="hl_c_ffprof" runat="server" NavigateUrl="~/codigos.aspx?E=8">FF PROFILAXIS</asp:HyperLink></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="#" class="dir" id="A1" runat="server">INVENTARIO&nbsp;<img src="images/arrow.png" alt="" style="border:0px;" /></a>
+                                            <ul>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/IngresoMed_Inventario.aspx?E=1">INGRESO MEDICAMENTO ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/IngresoMed_Inventario_PROF.aspx?E=1">INGRESO MEDICAMENTO PROF</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Corte_DiarioARV.aspx?E=1">CORTE DIARIO ARV</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Corte_DiarioPROF.aspx?E=1">CORTE DIARIO PROF</asp:HyperLink></li>
+                                                <li>
+                                                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Otros_EgresosMED.aspx?E=1">OTROS EGRESOS</asp:HyperLink></li>
+                                           
+                                                 </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td style="text-align:right; padding-right:4px; width:120px; background-color:#544e41;">
+                                <table border="0" cellpadding="0" cellspacing="0" style="height:20px; width:120px;" >
+                                    <tr>
+                                        <td style="text-align:right; width:16px; padding-right:2px;">
+                                            <asp:Image ID="img_usuario" runat="server" ImageUrl="~/images/user_blanco.png" BorderWidth="0px" AlternateText="" ToolTip="" />
+                                        </td>
+                                        <td style="padding:0px 4px 0px 2px;">
+                                            <asp:Label ID="lbl_nombre" runat="server" Text="" CssClass="usrlbl"></asp:Label>
+                                        </td>
+                                        <td style="width:14px; padding:0px 0px 0px 4px; border-left:solid 1px #aba392; text-align:right;">
+                                            <asp:ImageButton ID="IB_conexion" runat="server" ImageUrl="~/images/logoff.png" CausesValidation="False" AlternateText="DESCONECTAR" ToolTip="DESCONECTAR" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <asp:ContentPlaceHolder ID="CPH_DatosBasalesPaciente" runat="server" Visible="true">
+                    <div id="DatosPaciente" runat="server" style="display: none">
+                        <div style="padding: 5px; width: 770px; border: solid 1px #aba392; background-color: #FFFFFF;">
+                            <div style="margin-top: 5px; width: 700px; border: solid 1px #5d7b9d; text-align: left;">
+                                <div class="d-flex flex-row ">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12 form-control  ">
+                                                <div id="page_titulo" class="h5 text-lg-center theader2 text-white">NOMBRE DEL FORMULARIO</div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row align-content-center ">
+                                            <div id="MensajeError" runat="server" class="col-sm-12 mt-2 alert alert-danger text-nowrap text-md-center w-25 p-0" style="display: none">
+                                                <asp:Label ID="vfmensajeError" runat="server" Text="aqui" Style="font-size: large; font-style: normal" CssClass="line text-dark text-lg-center" EnableViewState="true"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row vertical-align">
+                                            <div class="col-6 ">
+                                                <div class="row ">
+                                                    <div class="hi col-6 col-sm-6   border border-white  label-primary ">
+                                                        <label class="hi form-control-sm text-left " style="height: 25px;" for="vfNHC">Número ASI:</label>
+                                                    </div>
+                                                    <div class="hi col-6 col-sm-6 border border-white col-form-label-sm ">
+                                                        <input type="text" id="vfNHC" class="hi form-control-sm" style="height: 25px;" name="vfNHC" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6  ml-2 ">
+                                                <div class="row ">
+                                                    <div class="hi col-6 col-sm-6">
+                                                        <input id="btninit" class="btn btn-secondary btn-sm" style="height: 30px;" type="button" value="Iniciar Atencion" onclick="javascript: IniciarAtencion()" />
+                                                    </div>
+                                                    <div class="hi col-6 col-sm-6 ">
+                                                        <input id="btnend"  class="btn btn-secondary btn-sm" style="height: 30px;" type="button" value="Finalizar Atencion" onclick="javascript: FinalizarAtencion()"  />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </asp:ContentPlaceHolder>
+                <div style="padding: 5px; width: 770px; border: solid 1px #aba392; background-color: #FFFFFF; display: block;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,698 @@
+﻿body
+{
+	margin: 0px;
+	font-family: 'trebuchet MS';
+	font-size: 8pt;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	background-color:#f7f6f3;
+}
+.wm {  
+    font-family: 'trebuchet MS';
+    font-size: 7pt;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: Gray  
+} 
+.GV_rowpad
+{
+	padding-left: 2px;
+	padding-right:2px;
+}
+.cursor
+{
+	cursor:pointer;
+}
+.linkbutton
+{
+	font-family: 'trebuchet MS';
+	font-size: 8pt;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+}
+.linkbutton:hover
+{
+	font-family: 'trebuchet MS';
+	font-size: 8pt;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: underline;
+}
+.button
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 84px;
+    height:26px;
+    background: url('../images/btn_back.png') no-repeat;
+    cursor: pointer;
+}
+.button:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 84px;
+    height:26px;
+    background: url('../images/btn_back_o.png') no-repeat;
+    cursor: pointer;
+}
+.error
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: center;
+}
+.generaPDF
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/generaPDF.png') no-repeat;
+    cursor: pointer;
+}
+.generaPDF:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/generaPDF_ov.png') no-repeat;
+    cursor: pointer;
+}
+.imprimePDF
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/imprimePDF.png') no-repeat;
+    cursor: pointer;
+}
+.imprimePDF:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/imprimePDF_ov.png') no-repeat;
+    cursor: pointer;
+}
+.actualizar
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/actualizar.png') no-repeat;
+    cursor: pointer;
+}
+.actualizar:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/actualizar_ov.png') no-repeat;
+    cursor: pointer;
+}
+.cancelar
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/cancelar.png') no-repeat;
+    cursor: pointer;
+}
+.cancelar:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    width: 92px;
+    height: 26px;
+    background: url('../images/cancelar_ov.png') no-repeat;
+    cursor: pointer;
+}
+.curved 
+{
+	-moz-border-radius:10px; /* Firefox */
+	-webkit-border-radius:10px; /* Safari and chrome */ 
+	-khtml-border-radius:10px; /* Linux browsers */ 
+	border-radius:10px; /* CSS3 */ 
+	behavior:url(border-radius.htc); /* IE */
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#333333;
+    font-size:8pt;
+    font-weight:normal;
+}
+.curved2 
+{
+	-moz-border-radius-topleft:10px; /* Firefox */
+	-webkit-border-top-left-radius:10px; /* Safari and chrome */ 
+	-moz-border-radius-bottomleft:10px; /* Firefox */
+	-webkit-border-bottom-left-radius:10px; /* Safari and chrome */ 
+	-khtml-border-radius:10px; /* Linux browsers */ 
+	/*border-radius:10px; /* CSS3 */ 
+	behavior:url(border-radius.htc); /* IE */
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#333333;
+    font-size:8pt;
+    font-weight:normal;
+}
+div.floating-menu 
+{
+	position:fixed;
+	margin-top:0; 
+	margin-left:-111px;
+	float: left;
+	background:#e8e4db;
+	padding: 4px;
+	/*border:1px solid #ffcc00;*/
+	width:92px;
+	z-index:500;
+	-moz-border-radius-topleft:10px; /* Firefox */
+	-webkit-border-top-left-radius:10px; /* Safari and chrome */ 
+	-moz-border-radius-bottomleft:10px; /* Firefox */
+	-webkit-border-bottom-left-radius:10px; /* Safari and chrome */ 
+	behavior:url(border-radius.htc); /* IE */
+}
+div.floating-menu a, div.floating-menu h3 
+{
+	display:block;
+	margin:0 0.5em;
+}
+.titulo
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #808080;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	border-bottom: solid 1px silver;
+	text-align: left;
+	display: block;
+	width: 745px;
+}
+.titulob
+{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:13pt;
+    font-weight:bold;
+    text-transform: uppercase;
+    color: #333333;
+    padding-bottom:0px;
+    padding-left:5px;
+    margin-bottom:2px;
+    margin-top:2px;
+    border-bottom: solid 1px #333333;
+    text-align:left;
+    display: block;
+    width:745px;
+}
+.titulo1
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color:#f7f6f3;
+	color: #333333;
+	padding-left:5px;
+	margin-bottom:2px;
+    margin-top:2px;
+	text-align: left;
+	display: block;
+	width: 745px;
+}
+.usrlbl
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #ffffff;
+}
+.NHC
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #003399;
+	text-align: left;
+    margin-left: 0px;
+}
+.datos
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #333333;
+	text-align: left;
+	border: solid 1px #b5b8ba;
+}
+.fecha
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: bold;
+	color: #003399;
+	text-align: left;
+}
+.paciente
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #333333;
+	text-align: left;
+}
+.datos
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #333333;
+	text-align: left;
+	border: solid 1px #b5b8ba;
+}
+.datosM
+{
+	font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #333333;
+	text-align: left;
+	border: solid 1px #b5b8ba;
+	resize: none;
+}
+#menutop
+{
+    float:left;
+    padding-left:0px;
+    padding-top:0px;
+}
+/*****************************/
+/*menu*/
+/*------------------------------------------------------------------------------------------------------/
+ * @section     Base Drop-Down Styling
+ * @structure   ul (unordered list)
+ *              ul li (list item)
+ *              ul li a (links)
+ *              *(.class|:hover)
+ * @level sep   ul
+ */
+/* ----- ALL LEVELS (incl. first) */
+ul.dropdown
+{
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+ul.dropdown li
+{
+    padding: 2px 0px 0px 0px;
+    background-color: #aba392;
+    color: #ffffff;
+    line-height: normal;
+}
+ul.dropdown li.hover, ul.dropdown li:hover {}
+ul.dropdown a:link, ul.dropdown a:visited
+{
+    color: #ffffff; 
+    text-decoration: none;
+}
+ul.dropdown a:hover
+{
+    color: #910000;
+    text-decoration: none;
+}
+ul.dropdown a:active { color: #E1E1E1; }
+/* ----- END LEVEL */
+/* ----- NON-FIRST LEVEL */
+ul.dropdown ul
+{
+    width: 170px;
+    background-color: #544e41;
+    color: #E1E1E1;
+    font-size: 8pt;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight:400;
+    text-transform: none;
+}
+ul.dropdown ul li
+{
+    background-color: transparent;
+    color: #231F20;
+}
+ul.dropdown ul li.hover, ul.dropdown ul li:hover {
+    background-color: transparent;
+}
+ul.dropdown ul a:link, ul.dropdown ul a:visited { color: #FFFFFF; }
+ul.dropdown ul a:hover
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+ul.dropdown ul a:active { color: #FFFFFF; }
+/* ----- END LEVEL */
+/*------------------------------------------------------------------------------------------------------/
+ * @section Support Class 'dir'
+ * @level sep   ul, .class
+ */
+/* ----- ALL LEVELS (incl. first) */
+ul.dropdown *.dir {
+    padding-right: 12px;
+    background-image: none;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+ul.ultab
+{
+    padding-top:4px;
+    padding-right:-4px;
+}
+/*****************************/
+/*menu desconectar*/
+/*------------------------------------------------------------------------------------------------------/
+ * @section     Base Drop-Down Styling
+ * @structure   ul (unordered list)
+ *              ul li (list item)
+ *              ul li a (links)
+ *              *(.class|:hover)
+ * @level sep   ul
+ */
+/* ----- ALL LEVELS (incl. first) */
+ul.dropdown1
+{
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    border: 1px solid #F2F2F2; 
+}
+ul.dropdown1 li
+{
+    background-color: #FFFFFF;
+    color: #333333;
+    line-height: normal;
+}
+ul.dropdown1 li.hover, ul.dropdown1 li:hover {}
+ul.dropdown1 a:link, ul.dropdown1 a:visited
+{
+    color: #333333; 
+    text-decoration: none;
+}
+ul.dropdown1 a:hover
+{
+    text-decoration: none;
+}
+ul.dropdown1 a:active 
+{
+    color: #333333; 
+}
+/* ----- END LEVEL */
+/* ----- NON-FIRST LEVEL */
+ul.dropdown1 ul
+{
+    border: 1px solid #FDC10B;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #666666;
+    font-size: 8pt;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: none; 
+}
+ul.dropdown1 ul li
+{
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+ul.dropdown1 ul li.hover, ul.dropdown1 ul li:hover {
+    background-color: transparent;
+}
+ul.dropdown1 ul a:link, ul.dropdown1 ul a:visited 
+{ 
+    color: #ffffff; 
+    text-align:center;
+}
+ul.dropdown1 ul a:hover
+{
+    color: #ffffff;
+    text-decoration: none;
+    text-align:center;
+}
+ul.dropdown1 ul a:active { color: #ffffff; }
+/* ----- END LEVEL */
+/*------------------------------------------------------------------------------------------------------/
+ * @section Support Class 'dir'
+ * @level sep   ul, .class
+ */
+/* ----- ALL LEVELS (incl. first) */
+ul.dropdown1 *.dir {
+    padding-right: 4px;
+    padding-left: 4px;
+    background-image: none;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+/* ----- END LEVEL */
+/* Components override */
+/* ajax__tab_yuitabview-theme theme (img/yui/sprite.png) */
+.ajax__tab_yuitabview-theme .ajax__tab_header 
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:8pt;
+    color: #000000;
+    border-bottom:solid 2px #5d7b9d;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_header .ajax__tab_outer 
+{
+    /*background:url('../images/sprite2.png') #d8d8d8 repeat-x;*/
+    background-color:#e9ecf1;
+    margin:0px 2px 0px 0px;
+    padding:1px 0px 1px 0px;
+    vertical-align:bottom;
+    border:solid 1px #5d7b9d;
+    border-bottom-width:0px;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:1px 1px;    
+    margin-right:2px;
+    margin-left: 2px;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_hover .ajax__tab_outer 
+{
+    /*background: url('../images/sprite2.png') #FDC10B repeat-x left -1300px;*/
+    background-color:#d6dbe4;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_active .ajax__tab_tab 
+{
+    color: #FFFFFF;
+    font-size: 8pt;
+    font-weight: bold;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_active .ajax__tab_outer
+{
+    /*background:url('../images/sprite2.png') #231F20 repeat-x left -1400px;*/
+    background-color:#5d7b9d;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border:solid 1px #5d7b9d;
+}
+.ajax__tab_yuitabview-theme .ajax__tab_body 
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:10pt;
+    padding:0px;
+    /*background-color:#5d7b9d;*/
+    background-color: #FFFFFF;
+    border:solid 1px #5d7b9d;
+    border-top-width:0px;
+}
+.theader
+{
+	background-color: #5d7b9d; 
+	color: #ffffff; 
+	font-size:10pt; 
+	text-align:center;
+	padding: 2px 0px 2px 0px;
+}
+.button1
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    color: #FFFFFF;    
+    text-align: center;
+    font-weight: normal;
+    width: 84px;
+    height:26px;
+    background: url('../images/Boton1.png') no-repeat;
+    cursor: pointer;         
+}
+.button1:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+	/*box-shadow:0px 0px 0px;
+	padding-top:7px;*/
+}
+.Tamaño
+{
+   /*height:300px;
+   width: 500px;*/
+   display:none;
+   max-width:500px;
+   max-height:300px;
+   border:none;
+   text-align:center;
+          
+}
+.align-items-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.vertical-align {
+    display: flex;
+    flex-direction: row;
+}
+    .vertical-align > [class^="col-"],
+    .vertical-align > [class*=" col-"] {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Optional, to align inner items 
+                              horizontally inside the column */
+    }
+        /**
+ *  Do NOT include this part into your stylesheet.
+ *  "flex: 1" or "flex-grow: 1" is added to make the inner div
+ *  - Which is also a flex-item - take up all the horizontal space
+ *  available space inside the flex container (.col-* elements)
+ */
+        .vertical-align > [class^="col-"] > div,
+        .vertical-align > [class*=" col-"] > div {
+            /* flex: 1; */
+            flex-grow: 1;
+        }
+    /**
+ * S T Y L I N G
+ ==================================*/
+    .vertical-align > div:first-child {
+        background-color: #ffffff;
+        /* This is just for demonstration of
+                                padding-box of the columns.
+                                I added this background to show 
+                                the height of the columns         */
+    }
+    .vertical-align > div:last-child {
+        background-color:  #ffffff;
+        /* This is just for demonstration of
+                                padding-box of the columns.
+                              
+                                I added this background to show 
+                                the height of the columns         */
+    }
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
